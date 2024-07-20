@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Form Handling Demo<br>",
+    "language_info": {
+      "name": "JavaScipt",
+      "version": "8.0"
+    }
+  },
+  "jsnbversion": "v0.1",
+  "cells": [
+    {
+      "code": "<div>\n   <label>Email:</label>\n  <input type=\"text\" id=\"email\"/>   <!-- if you want to select some element easy, give it an id or class -->\n  </div> ",
+      "status": "",
+      "output": "<div>\n   <label>Email:</label>\n  <input type=\"text\" id=\"email\">   <!-- if you want to select some element easy, give it an id or class -->\n  </div> ",
+      "type": "html"
+    },
+    {
+      "code": "// get whatever the user has typed in the textbox\nlet emailInput = document.querySelector('#email');\nlet email = emailInput.value;   // text boxes have value property (always a string)\nscrib.show(email);\n\n// This code take the MOST CURRENT value from the text box\n// to get the latest, we must get the value from the textbox",
+      "status": "[9]<br><span style=\"font-size:8px\">0ms<span></span></span>",
+      "output": " <br>",
+      "type": "code"
+    },
+    {
+      "code": "<label>Are you using for academic or for commerical</label>\n<input type=\"radio\" name=\"purpose\" class=\"purpose\" value=\"academic\"/><label>Academic</label>\n<input type=\"radio\" name=\"purpose\" class=\"purpose\" value=\"commerical\"/><label>Commerical</label>\n<input type=\"radio\" name=\"purpose\" class=\"purpose\" value=\"charitable-or-non-profit\"><label>Charitable or Non-Profit</label>\n<input type=\"radio\" name=\"purpose\" class=\"purpose\" value=\"others\"/><label>Others</label>\n<!-- \n  Each radio button must have its own value (the value must be programmer-friendly)\n  The name must be the same for the radio buttons to be in the same group\n  -->",
+      "status": "",
+      "output": "<label>Are you using for academic or for commerical</label>\n<input type=\"radio\" name=\"purpose\" class=\"purpose\" value=\"academic\"><label>Academic</label>\n<input type=\"radio\" name=\"purpose\" class=\"purpose\" value=\"commerical\"><label>Commerical</label>\n<input type=\"radio\" name=\"purpose\" class=\"purpose\" value=\"charitable-or-non-profit\"><label>Charitable or Non-Profit</label>\n<input type=\"radio\" name=\"purpose\" class=\"purpose\" value=\"others\"><label>Others</label>\n<!-- \n  Each radio button must have its own value (the value must be programmer-friendly)\n  The name must be the same for the radio buttons to be in the same group\n  -->",
+      "type": "html"
+    },
+    {
+      "code": "// pesudo class (CSS)\n//let selectedRb = document.querySelector(`[name=\"purpose\"]:checked`);  // <-- only if you like the syntax\nlet selectedRb = document.querySelector(\".purpose:checked\"); // use the :checked pesudo class to get the radio button that is checked;\nscrib.show(selectedRb.value);",
+      "status": "[10]<br><span style=\"font-size:8px\">0ms<span></span></span>",
+      "output": "charitable-or-non-profit <br>",
+      "type": "code"
+    }
+  ],
+  "source": "https://github.com/gopi-suvanam/jsnb",
+  "run_on_load": false
+}
