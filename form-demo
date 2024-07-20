@@ -9,7 +9,7 @@
   "jsnbversion": "v0.1",
   "cells": [
     {
-      "code": "<div>\n   <label>Email:</label>\n  <input type=\"text\" id=\"email\"/>   <!-- if you want to select some element easy, give it an id or class -->\n  </div> ",
+      "code": "<div>\n   <label>Email:</label>\n  <input type=\"text\" id=\"email\"/>   <!-- if you want to select some element easy, give it an id or class -->\n </div> ",
       "status": "",
       "output": "<div>\n   <label>Email:</label>\n  <input type=\"text\" id=\"email\">   <!-- if you want to select some element easy, give it an id or class -->\n  </div> ",
       "type": "html"
@@ -27,9 +27,39 @@
       "type": "html"
     },
     {
-      "code": "// pesudo class (CSS)\n//let selectedRb = document.querySelector(`[name=\"purpose\"]:checked`);  // <-- only if you like the syntax\nlet selectedRb = document.querySelector(\".purpose:checked\"); // use the :checked pesudo class to get the radio button that is checked;\nscrib.show(selectedRb.value);",
+      "code": "// pesudo class (CSS)\n//let selectedRb = document.querySelector(`[name=\"purpose\"]:checked`);  // <-- only if you like the syntax\nlet selectedRb = document.querySelector(\".purpose:checked\"); // use the :checked pesudo class to get the radio button that is checked;\nlet purpose = selectedRb.value;\nscrib.show(selectedRb.value);",
       "status": "[10]<br><span style=\"font-size:8px\">0ms<span></span></span>",
       "output": "charitable-or-non-profit <br>",
+      "type": "code"
+    },
+    {
+      "code": "<label>How did you hear about us</label>\n<input type=\"checkbox\" name=\"hear-about\" class=\"hear-about\" value=\"word-of-mouth\"><label>Word of Mouth</label>\n<input type=\"checkbox\" name=\"hear-about\" class=\"hear-about\" value=\"newsletter\"><label>Newsletter</label>\n<input type=\"checkbox\" name=\"hear-about\" class=\"hear-about\" value=\"sales-personnel\"><label>Sales Personnel</label>\n<input type=\"checkbox\" name=\"hear-about\" class=\"hear-about\" value=\"social-media\"><label>Social Media</label>\n",
+      "status": "",
+      "output": "<label>How did you hear about us</label>\n<input type=\"checkbox\" name=\"hear-about\" class=\"hear-about\" value=\"word-of-mouth\"><label>Word of Mouth</label>\n<input type=\"checkbox\" name=\"hear-about\" class=\"hear-about\" value=\"newsletter\"><label>Newsletter</label>\n<input type=\"checkbox\" name=\"hear-about\" class=\"hear-about\" value=\"sales-personnel\"><label>Sales Personnel</label>\n<input type=\"checkbox\" name=\"hear-about\" class=\"hear-about\" value=\"social-media\"><label>Social Media</label>\n",
+      "type": "html"
+    },
+    {
+      "code": "// extract which checkboxes have been selected (i.e, \"checked\")\nlet selectedCheckboxes = document.querySelectorAll(\".hear-about:checked\");\nconsole.log(selectedCheckboxes);\n// show the selected checkboxes\nlet hearAbout = [];  // Accumulator pattern\nfor (let checkbox of selectedCheckboxes) {\n  hearAbout.push(checkbox.value);\n}\nscrib.show(hearAbout);",
+      "status": "[18]<br><span style=\"font-size:8px\">1ms<span></span></span>",
+      "output": "[\n  \"newsletter\",\n  \"sales-personnel\"\n] <br>",
+      "type": "code"
+    },
+    {
+      "code": "// another way to put the values of the checked checkboxes into an array\n// we can use the `map` function\nlet hearAbout = Array.from(selectedCheckboxes).map(function(checkbox){\n  return checkbox.value;\n});",
+      "status": "",
+      "output": "",
+      "type": "code"
+    },
+    {
+      "code": "<label>Country<label>\n  <select id=\"country\">\n\t<option value=\"sg\">Singapore</option>\n   <option value=\"my\">Malaysia</option>\n  <option value=\"idn\">Indonesia</option>\n</select>",
+      "status": "",
+      "output": "<label>Country<label>\n  <select id=\"country\">\n\t<option value=\"sg\">Singapore</option>\n   <option value=\"my\">Malaysia</option>\n  <option value=\"idn\">Indonesia</option>\n</select></label></label>",
+      "type": "html"
+    },
+    {
+      "code": "let  countryOption = document.querySelector('#country');\nlet country =countryOption.value;\nscrib.show(country);\n\nlet reverseLookup = {\n  'sg':'Singapore',\n  'my':'Malaysia',\n  'idn':'Indonesia',\n};\n\nscrib.show(\"You are from \" + reverseLookup[country]);",
+      "status": "[20]<br><span style=\"font-size:8px\">0ms<span></span></span>",
+      "output": "my <br>You are from Malaysia <br>",
       "type": "code"
     }
   ],
