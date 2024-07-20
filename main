@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "name": "DOM Revision",
+    "language_info": {
+      "name": "JavaScipt",
+      "version": "8.0"
+    }
+  },
+  "jsnbversion": "v0.1",
+  "cells": [
+    {
+      "code": "<h1>DOM Revision</h1>\n<ul>\n   <li>DOM = \"document object model\"</li>\n   <li>Document = the HTML</li>\n  <li>Object=The HTML is represented as a JavaScript object</li>\n  </ul>",
+      "status": "",
+      "output": "<h1>DOM Revision</h1>\n<ul>\n   <li>DOM = \"document object model\"</li>\n   <li>Document = the HTML</li>\n  <li>Object=The HTML is represented as a JavaScript object</li>\n  </ul>",
+      "type": "html"
+    },
+    {
+      "code": "// recap: what is an object in Java?\n// - object contains DATA and FUNCTIONS\n// so the document object contains:\n// DATA: the HTML elements and all their properties (their style, innerHTML, attributes etc.)\n// FUNCTIONS: functions that allow the programmers to manipulate the DATA (i.e, the HTML)",
+      "status": "[3]<br><span style=\"font-size:8px\">0ms<span></span></span>",
+      "output": "",
+      "type": "code"
+    },
+    {
+      "code": "<div id=\"container\" class=\"container\">\n    <h1 class=\"mainTitle\">Welcome to SugarFree Bubble Tea</h1>\n   <h2 id=\"subTitle\">Guilt-free Bubble Tea without Any of the Fun</h1>\n   <h3 class=\"mainTitle\">Any main title</h3>\n  <p>Best selling point: Nutrigrade A!</p>\n <h2>Our features</h2>\n <ul id=\"features\">\n     <li class=\"important\">No queue at our shop</li>\n    <li class=\"important\">0% sugar</li>\n   <li>Cheap</li>\n   </ul>\n  </div>",
+      "status": "",
+      "output": "<div id=\"container\" class=\"container\">\n    <h1 class=\"mainTitle\">Welcome to SugarFree Bubble Tea</h1>\n   <h2 id=\"subTitle\">Guilt-free Bubble Tea without Any of the Fun</h2>\n   <h3 class=\"mainTitle\">Any main title</h3>\n  <p>Best selling point: Nutrigrade A!</p>\n <h2>Our features</h2>\n <ul id=\"features\">\n     <li class=\"important\">No queue at our shop</li>\n    <li class=\"important\">0% sugar</li>\n   <li>Cheap</li>\n   </ul>\n  </div>",
+      "type": "html"
+    },
+    {
+      "code": "// select element as a HTML DOM object\nlet h1 = document.querySelector(\"h1.mainTitle\");  // usually no harm in being too specific (especially with class)\nscrib.show(h1.innerHTML);",
+      "status": "[4]<br><span style=\"font-size:8px\">0ms<span></span></span>",
+      "output": "Welcome to SugarFree Bubble Tea <br>",
+      "type": "code"
+    },
+    {
+      "code": "let featureList = document.querySelector(\"ul#features\"); // we want the `ul with the id of features`",
+      "status": "",
+      "output": "",
+      "type": "code"
+    },
+    {
+      "code": "// select all li with the class of important\nlet importantStuff = document.querySelectorAll(\"li.important\");\nfor (let stuff of importantStuff) {\n  scrib.show(stuff.innerHTML);\n}\n",
+      "status": "[8]<br><span style=\"font-size:8px\">0ms<span></span></span>",
+      "output": "No queue at our shop <br>0% sugar <br>",
+      "type": "code"
+    },
+    {
+      "code": "<div>\n   <button id=\"red\">Red</button>\n  <button id=\"green\">Green</button>\n   <div id=\"message\">The quick brown fox jumps over the lazy dog</div>\n  </div>",
+      "status": "",
+      "output": "<div>\n   <button id=\"red\">Red</button>\n  <button id=\"green\">Green</button>\n   <div id=\"message\" style=\"color: red;\">The quick brown fox jumps over the lazy dog</div>\n  </div>",
+      "type": "html"
+    },
+    {
+      "code": "// DOM manipulation is a 2 step process\n// The first kind of manipulation to change the properties of the HTML element\n// Step 1: select the DOM object that we want to manipulate\nlet message = document.querySelector(\"#message\");\n\n// Step 2: manipulate the DOM object\nmessage.style.color = \"blue\";  // to change the stylesheet of a DOM object, use `.style`\n\n// example : <a href=\"www.google.com\" id=\"link\"/>\n// let link = document.querySelector(\"#link\");\n// link.href=\"www.yahoo.com\";",
+      "status": "[10]<br><span style=\"font-size:8px\">0ms<span></span></span>",
+      "output": "blue <br>",
+      "type": "code"
+    },
+    {
+      "code": "// The second kind of manipulation is to change the behaviour\nlet redButton = document.querySelector(\"#red\");\nredButton.addEventListener(\"click\", function(){\n  let message = document.querySelector(\"#message\").style.color = \"red\";\n});",
+      "status": "[13]<br><span style=\"font-size:8px\">0ms<span></span></span>",
+      "output": "",
+      "type": "code"
+    },
+    {
+      "code": "<input type=\"text\" name=\"firstName\" id=\"firstTextbox\"/>",
+      "status": "",
+      "output": "<input type=\"text\" name=\"firstName\" id=\"firstTextbox\">",
+      "type": "html"
+    },
+    {
+      "code": "// select by name (note the syntax)\n// NAMES are only applicable, among common elements, is <a> and <input>\nlet nameBox = document.querySelector(\"[name='firstName']\");\nscrib.show(nameBox.value);",
+      "status": "[14]<br><span style=\"font-size:8px\">1ms<span></span></span>",
+      "output": "John Snow <br>",
+      "type": "code"
+    },
+    {
+      "code": "",
+      "status": "",
+      "output": "",
+      "type": "code"
+    }
+  ],
+  "source": "https://github.com/gopi-suvanam/jsnb",
+  "run_on_load": false
+}
